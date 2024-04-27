@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Mobile Tab Navigation</title>
+</head>
+
+<body>
+    <div class="phone max-w-sm mx-auto relative">
+        <!-- Time and battery indicators -->
+        <div class="absolute top-0 left-0 right-0 flex justify-between items-center px-4 bg-gray-900 text-white h-5">
+            <div class="flex items-center text-xs"> <!-- Reduced text size -->
+                <span id="time">12:00 PM</span>
+            </div>
+            <div class="text-xs">
+                <i class="fas fa-battery-three-quarters text-sm mr-1"></i> <!-- Reduced icon size -->
+                <span id="battery" class="text-xs">95%</span> <!-- Reduced text size -->
+            </div>
+        </div>
+        
+        <!-- Phone content -->
+        <div class="phone-content overflow-hidden" style="height:auto">
+            <div class="content-wrapper" style="background-color: white;">
+                <iframe src="temp.html" class="frame" style="overflow-x: hidden; margin-left:0%; padding-left:0%;">
+                </iframe>
+            </div>
+            <img src="img/H1.jpeg" alt="Home" class="content show" id="main-img" style="height: auto;margin-top: 15px;">
+            <img src="img/Messages.jpeg" alt="Search" class="content" style="height: auto;margin-top: 15px;">
+            <img src="img/Notifications.jpeg" alt="Search" class="content" style="height: auto;margin-top: 15px;">
+            <img src="img/Menu.jpeg" alt="Search" class="content" style="height: auto;margin-top: 15px;">
+            
+
+        </div>
+
+        
+    
+        <!-- Navigation -->
+        <nav class="absolute bottom-0 left-0 w-full">
+            <ul class="flex list-none p-0 m-0 h-16" id="nav-tabs">
+                <!-- Home tab with blue color to indicate it's active -->
+                <li class="flex-1 cursor-pointer text-blue-500" onclick="setActiveTab(this)">
+                    <i class="fas fa-home p-1"></i>
+                    <p class="text-sm">Home</p>
+                </li>
+                <!-- All other tabs with gray color -->
+                <li class="flex-1 cursor-pointer text-gray-700" onclick="setActiveTab(this)">
+                    <i class="fas fa-comments p-1"></i>
+                    <p class="text-sm">Messages</p>
+                </li>
+                <li class="flex-1 cursor-pointer text-gray-700" onclick="setActiveTab(this)">
+                    <i class="fas fa-bell p-1"></i>
+                    <p class="text-sm">Notifications</p>
+                </li>
+                <li class="flex-1 cursor-pointer text-gray-700" id="menu" onclick="setActiveTab(this)">
+                    <i class="fas fa-bars p-1"></i>
+                    <p class="text-sm">Menu</p>
+                </li>
+            </ul>
+        </nav>
+        
+    </div>
+    
+    <script src="js/script.js"></script>
+</body>
+
+</html>
